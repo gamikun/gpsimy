@@ -1,0 +1,25 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"folder_exclude_patterns": ["env"]
+		}
+	],
+	"build_systems":
+	[
+		{
+			"name": "Unit Testing",
+			"cmd": ["$project_path/env/bin/python", "-u", "$file"],
+			"file_regex": "^tests/.+?\\.py",
+			"env": {
+				"EGPSWEB_BASEURL": "http://egps.local"
+			}
+		},
+		{
+			"name": "Python Dev",
+			"cmd": ["$project_path/env/bin/python", "-u", "$file"],
+			"file_regex": "\\.py$"
+		}
+	]
+}
